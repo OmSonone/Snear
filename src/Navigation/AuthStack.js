@@ -1,9 +1,9 @@
-import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import SignUpOrSignInScreen from "../Screens/SignUpOrSignIn/SignUpOrSignInScreen";
+import React from "react";
 import SignInScreen from "../Screens/SignIn/SignInScreen";
 import SignUpScreen from "../Screens/SignUp/SignUpScreen";
+import SignUpOrSignInScreen from "../Screens/SignUpOrSignIn/SignUpOrSignInScreen";
+
 
 const Stack = createNativeStackNavigator();
 

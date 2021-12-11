@@ -1,10 +1,8 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
-
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import appleIcon from "../../assets/logos/apple.png";
 import googleIcon from "../../assets/logos/google.png";
-import { Colors } from "../../constants/colors/Colors";
-import { scaledSize } from "../../utilities/Utilities";
+
 export default function LargeButton(props) {
   const { name, bgColor, imageUrl, fontColor, fontSize, onPress, style } =
     props;

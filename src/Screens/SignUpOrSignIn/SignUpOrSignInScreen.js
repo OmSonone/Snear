@@ -1,20 +1,17 @@
+import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import {
-  StyleSheet,
   ImageBackground,
-  StatusBar,
-  View,
-  Text,
-  TouchableOpacity,
+  StatusBar, StyleSheet, Text,
+  TouchableOpacity, View
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { LinearGradient } from "expo-linear-gradient";
-import { windowHeight, windowWidth } from "../../utilities/DeviceDimensions";
-
-import { Colors } from "../../constants/colors/Colors";
-import { scaledSize } from "../../utilities/Utilities";
 import LargeButton from "../../components/buttons/LargeButton";
+import { Colors } from "../../constants/colors/Colors";
+import { windowHeight, windowWidth } from "../../utilities/DeviceDimensions";
+import { scaledSize } from "../../utilities/Utilities";
 import { config } from "./config.js";
+
 
 export default function SignUpOrSignInScreen({ navigation }) {
   return (

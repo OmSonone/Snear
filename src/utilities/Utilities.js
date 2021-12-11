@@ -1,4 +1,4 @@
-import { Alert, Dimensions, Platform } from "react-native";
+import { Dimensions } from "react-native";
 
 const {
   width,

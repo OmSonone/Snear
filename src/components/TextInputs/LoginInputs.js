@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import MaterialsIcon from "react-native-vector-icons/MaterialIcons";
+import { TouchableOpacity, View } from "react-native";
 import { Kohana } from "react-native-textinput-effects";
-
+import MaterialsIcon from "react-native-vector-icons/MaterialIcons";
 import { Colors } from "../../constants/colors/Colors";
 import { scaledSize } from "../../utilities/Utilities";
+
 
 export default function LoginInputs(props) {
   const {

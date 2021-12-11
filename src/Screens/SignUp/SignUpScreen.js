@@ -1,24 +1,22 @@
 import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
-import { windowHeight, windowWidth } from "../../utilities/DeviceDimensions";
-
 import {
-  ImageBackground,
-  ScrollView,
-  StatusBar,
+  ImageBackground, StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { SafeAreaView } from "react-native-safe-area-context";
-
 import LargeButton from "../../components/buttons/LargeButton";
 import LoginInputs from "../../components/TextInputs/LoginInputs";
 import { Colors } from "../../constants/colors/Colors";
+import { windowHeight } from "../../utilities/DeviceDimensions";
 import { scaledSize } from "../../utilities/Utilities";
 import { config } from "./config.js";
+
+
 
 export default function SignUpScreen({ navigation }) {
   const [email, setEmail] = useState("");
