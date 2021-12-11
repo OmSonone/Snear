@@ -1,19 +1,49 @@
 import { LinearGradient } from "expo-linear-gradient";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   ImageBackground,
-  StatusBar, StyleSheet, Text,
-  TouchableOpacity, View
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import * as Google from "expo-google-app-auth";
 import LargeButton from "../../components/buttons/LargeButton";
 import { Colors } from "../../constants/colors/Colors";
 import { windowHeight, windowWidth } from "../../utilities/DeviceDimensions";
 import { scaledSize } from "../../utilities/Utilities";
 import { config } from "./config.js";
+import { getShopkeepersApi } from "../../controllers/getControllers/getController";
 
+// const IOS_CLIENT_ID =
+//   "242154039146-9po3cthdusmet6inj4olj3uh226jrnu3.apps.googleusercontent.com";
 
 export default function SignUpOrSignInScreen({ navigation }) {
+  useEffect(() => {
+    getShopkeepersApi();
+  }, []);
+
+  const signInAsync = async () => {
+    console.log("SignUpOrSignInScreen.js 22 | loggin in");
+    try {
+      const { type, user } = await Google.logInAsync({
+        iosClientId: `242154039146-9po3cthdusmet6inj4olj3uh226jrnu3.apps.googleusercontent.com`,
+        androidClientId: `242154039146-eal02v3jvb9gas76hunguklbroea3kji.apps.googleusercontent.com`,
+      });
+
+      if (type === "success") {
+        // Then you can use the Google REST API
+        console.log(
+          `SignUpOrSignInScreen.js 32 | success,${JSON.stringify(user)}`
+        );
+        // navigation.navigate("Profile", { user });
+      }
+    } catch (error) {
+      console.log("SignUpOrSignInScreen.js 37 | error with login", error);
+    }
+  };
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -52,7 +82,7 @@ export default function SignUpOrSignInScreen({ navigation }) {
           bgColor={Colors.transparent}
           imageUrl={config.googleImgUrlProp}
           fontColor={Colors.white}
-          onPress={() => navigation.navigate("SignIn")}
+          onPress={() => signInAsync()}
           style={styles.buttonStyles}
         />
         <LargeButton
