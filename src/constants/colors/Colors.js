@@ -9,4 +9,5 @@ export const Colors = {
   secondaryLight: "#ffd54f",
   white: "#fff",
   black: "#000",
+  error: "#FF0000",
 };

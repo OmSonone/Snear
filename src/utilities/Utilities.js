@@ -19,6 +19,7 @@ export const scaleRatio = deviceScale;
 export const deviceWidth = width;
 export const deviceHeight = height;
 export const deviceAspectRatio = width / height;
-export const scaledSize = (size) => Math.ceil(size * scale);
+export const scaledSize = ( size ) => Math.ceil( size * scale );
+
 // export const widthFromPercentage = (per) => (width * per) / 100;
 // export const heightFromPercentage = (per) => (height * per) / 100;

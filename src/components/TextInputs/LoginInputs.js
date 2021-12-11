@@ -5,7 +5,6 @@ import MaterialsIcon from "react-native-vector-icons/MaterialIcons";
 import { Colors } from "../../constants/colors/Colors";
 import { scaledSize } from "../../utilities/Utilities";
 
-
 export default function LoginInputs(props) {
   const {
     iconName,
@@ -19,6 +18,7 @@ export default function LoginInputs(props) {
     autoCorrect,
     autoCompleteType,
     keyboardType,
+    style,
   } = props;
 
   return (
@@ -33,11 +33,7 @@ export default function LoginInputs(props) {
       }}
     >
       <Kohana
-        style={{
-          backgroundColor: Colors.secondary,
-          height: scaledSize(50),
-          borderRadius: scaledSize(10),
-        }}
+        style={style}
         autoCapitalize={autoCapitalize}
         autoCorrect={autoCorrect}
         autoCompleteType={autoCompleteType}
